@@ -18,23 +18,29 @@
             height: 300px;
             border: 1px solid #ccc;
         }
+        .border-success {
+            border-color: #198754 !important;
+        }
+        .border-dark {
+            border-color: #343a40 !important;
+        }
     </style>
 </head>
 <body>
-    <div class="container my-4 ">
+    <div class="container my-4">
         <p class="text-center mb-4 h1">ที่เขียน HTML แบบเรียลทาม ให้น้องเฟสไว้ฝึก</p>
         
         <!-- Accordion -->
-        <div class="accordion accordion-flush" id="accordionFlushExample ">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
             <!-- Code Editor Section -->
             <div class="accordion-item mb-4">
-                <h2 class="accordion-header  border border-dark" id="headingCode">
+                <h2 class="accordion-header border border-dark" id="headingCode">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCode" aria-expanded="false" aria-controls="collapseCode">
                         เขียน โค๊ด ของคุณ
                     </button>
                 </h2>
                 <div id="collapseCode" class="accordion-collapse collapse" aria-labelledby="headingCode" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body ">
+                    <div class="accordion-body">
                         <textarea id="htmlInput" class="form-control" placeholder="Write your HTML code here..."></textarea>
                     </div>
                 </div>
@@ -42,7 +48,7 @@
 
             <!-- Output Viewer Section -->
             <div class="accordion-item">
-                <h2 class="accordion-header  border border-dark" id="headingOutput">
+                <h2 class="accordion-header border border-dark" id="headingOutput">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOutput" aria-expanded="false" aria-controls="collapseOutput">
                         ผลลัพธ์ของคุณ
                     </button>
@@ -61,11 +67,21 @@
     <script>
         const htmlInput = document.getElementById('htmlInput');
         const output = document.getElementById('output');
+        const headingOutput = document.getElementById('headingOutput');
 
         // Listen to changes in the textarea
         htmlInput.addEventListener('input', () => {
-            const code = htmlInput.value;
+            const code = htmlInput.value.trim();
             output.srcdoc = code; // Dynamically update the iframe
+
+            // Change border color based on input presence
+            if (code) {
+                headingOutput.classList.remove('border-dark');
+                headingOutput.classList.add('border-success');
+            } else {
+                headingOutput.classList.remove('border-success');
+                headingOutput.classList.add('border-dark');
+            }
         });
     </script>
 </body>
