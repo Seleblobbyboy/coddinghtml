@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Live Editor with Cute Pink Theme</title>
+    <title>HTML Live Editor with Accordion</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Nunito', sans-serif;
             background-color: #ffeef5;
             color: #ff69b4;
         }
@@ -45,22 +45,19 @@
         }
         .accordion-header {
             font-weight: bold;
-            border-radius: 10px;
         }
         .accordion-body {
             background-color: #fff0f6;
-            border-radius: 10px;
         }
         .h1 {
             color: #ff69b4;
             font-weight: bold;
-         
         }
     </style>
 </head>
 <body>
     <div class="container my-4">
-        <p class="text-center mb-4 h1">ที่เขียน HTML แบบเรียลทาม ให้น้อง "เฟส" ไว้ฝึก</p>
+        <p class="text-center mb-4 h1">ที่เขียน HTML แบบเรียลทาม ให้น้องเฟสไว้ฝึก</p>
         
         <!-- Accordion -->
         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -71,9 +68,9 @@
                         เขียน โค๊ด ของคุณ
                     </button>
                 </h2>
-                <div id="collapseCode" class="accordion-collapse collapse" aria-labelledby="headingCode" data-bs-parent="#accordionFlushExample">
+                <div id="collapseCode" class="accordion-collapse collapse" aria-labelledby="headingCode">
                     <div class="accordion-body">
-                        <textarea id="htmlInput" class="form-control" placeholder="เขียน HTML ของคุณที่นี่..."></textarea>
+                        <textarea id="htmlInput" class="form-control" placeholder="Write your HTML code here..."></textarea>
                     </div>
                 </div>
             </div>
@@ -85,7 +82,7 @@
                         ผลลัพธ์ของคุณ
                     </button>
                 </h2>
-                <div id="collapseOutput" class="accordion-collapse collapse" aria-labelledby="headingOutput" data-bs-parent="#accordionFlushExample">
+                <div id="collapseOutput" class="accordion-collapse collapse" aria-labelledby="headingOutput">
                     <div class="accordion-body">
                         <iframe id="output" class="w-100"></iframe>
                     </div>
